@@ -1,0 +1,3 @@
+(203.74, 104.276614828062): Output with 1000 iterations for training
+Mean rewards: 203.74
+Standard Deviation of rewards/episode: 104.276614828062
