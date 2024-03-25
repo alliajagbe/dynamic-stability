@@ -18,7 +18,6 @@ min_exploration_rate = 0.01
 
 # Discretize the state
 def discretize_state(state):
-    # Define lower and upper bounds as lists
     lower_bounds = [env.observation_space.low[0], -0.5, env.observation_space.low[2], -np.radians(50)]
     upper_bounds = [env.observation_space.high[0], 0.5, env.observation_space.high[2], np.radians(50)]
     ratios = [(state[i] + abs(lower_bounds[i])) / (upper_bounds[i] - lower_bounds[i]) for i in range(len(state))]
@@ -40,16 +39,17 @@ def update_Q_value(state, action, reward, next_state, next_action):
     Q_table[state + (action,)] += learning_rate * (target - Q_table[state + (action,)])
 
 # Train the agent
-num_episodes = 1000
+num_episodes = 10000
 for episode in range(num_episodes):
-    state = discretize_state(env.reset())
+    state, _ = env.reset()
+    state = discretize_state(state)
     exploration_rate = max(min_exploration_rate, exploration_rate * exploration_decay_rate)
 
     done = False
     total_reward = 0
     while not done:
         action = choose_action(state, exploration_rate)
-        next_state, reward, done, _ = env.step(action)
+        next_state, reward, done, _, _ = env.step(action)
         next_state = discretize_state(next_state)
         update_Q_value(state, action, reward, next_state, action)
         state = next_state
@@ -62,12 +62,13 @@ for episode in range(num_episodes):
 total_rewards = []
 num_test_episodes = 100
 for _ in range(num_test_episodes):
-    state = discretize_state(env.reset())
+    state, _ = env.reset()
+    state = discretize_state(state)
     done = False
     total_reward = 0
     while not done:
         action = np.argmax(Q_table[state])
-        next_state, reward, done, _ = env.step(action)
+        next_state, reward, done, _, _ = env.step(action)
         next_state = discretize_state(next_state)
         state = next_state
         total_reward += reward
