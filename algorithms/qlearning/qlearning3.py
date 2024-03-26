@@ -39,7 +39,7 @@ class Q_Learning:
              
         randomNumber=np.random.random()
 
-        if index>700:
+        if index>600:
             self.epsilon=0.999*self.epsilon
         if randomNumber < self.epsilon:
             return np.random.choice(self.n_actions)            
@@ -56,12 +56,14 @@ class Q_Learning:
            
             print("Episode {}==============================================================================================================================".format(indexEpisode))
             terminalState=False
+            max_reward=0
             while not terminalState:
                 current_state_index=self.discretize_state(current_state)
                 actionA = self.select_action(current_state,indexEpisode)
                 (next_state, reward, terminalState,_,_) = self.env.step(actionA)          
                  
                 episodic_reward.append(reward)
+                max_reward += reward
                  
                 next_state=list(next_state)
                  
@@ -77,6 +79,8 @@ class Q_Learning:
                  
                 # set the current state to the next state                    
                 current_state=next_state
+                if max_reward>500:
+                    break
          
             print("Cumulative Rewards: {}".format(np.sum(episodic_reward)))        
             self.total_rewards.append(np.sum(episodic_reward))
