@@ -11,7 +11,7 @@
   - [x] All of us plan to utilize the OpenAI Gym environment to simulate basic stabilization tasks, fine-tuning the algorithms to achieve the expected performance.
 
 ### Weeks 5-6: Model Development and Preliminary Testing
-  - [ ] We will define evaluation metrics such as convergence speed, stability, and adaptability to ensure a fair comparison.
+  - [x] We will define evaluation metrics such as convergence speed, stability, and adaptability to ensure a fair comparison.
   - [ ] We plan to use Weights & Biases (Wandb) for tracking experiments, comparing model performances, and logging initial results.
   - [ ] Compare the performance of various algorithms (Q-learning, PPO, etc.) using predefined metrics for stability, efficiency, and adaptability.
 
