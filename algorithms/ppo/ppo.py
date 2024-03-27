@@ -15,7 +15,7 @@ env = DummyVecEnv([lambda: env])
 model = PPO('MlpPolicy', env, verbose=1)
 model.learn(total_timesteps=10000)
 
-results = evaluate_policy(model, env, n_eval_episodes=1000, return_episode_rewards=True, warn=False)
+results = evaluate_policy(model, env, n_eval_episodes=10000, return_episode_rewards=True, warn=False)
 
 per_episode_rewards = results[0]
 
