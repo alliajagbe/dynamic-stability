@@ -12,13 +12,13 @@
 
 ### Weeks 5-6: Model Development and Preliminary Testing
   - [x] We will define evaluation metrics such as convergence speed, stability, and adaptability to ensure a fair comparison.
-  - [ ] We plan to use Weights & Biases (Wandb) for tracking experiments, comparing model performances, and logging initial results.
-  - [ ] Compare the performance of various algorithms (Q-learning, PPO, etc.) using predefined metrics for stability, efficiency, and adaptability.
+  - [x] We plan to use Weights & Biases (Wandb) for tracking experiments, comparing model performances, and logging initial results.
+  - [x] Compare the performance of various algorithms (Q-learning, PPO, etc.) using predefined metrics for stability, efficiency, and adaptability.
 
 ### Weeks 7-8: In-depth Testing, Evaluation, and Optimization
-  - [ ] Optimize models based on testing feedback.
-  - [ ] Utilize Wandb extensively for experiment tracking, result comparison, and identifying best-performing models.
+  - [x] Optimize models based on testing feedback.
+  - [x] Utilize Wandb extensively for experiment tracking, result comparison, and identifying best-performing models.
 
 ### Weeks 9-10: Extensive Testing, Simulation, and Documentation
-  - [ ] Conduct final evaluations, comparing the models against all predefined metrics and documenting the efficiency of different algorithms.
-  - [ ] Document our methodology, results, and insights in a detailed report that encapsulates our findings and contributions to dynamic stability in balancing systems similar to the CartPole Dynamics.
+  - [x] Conduct final evaluations, comparing the models against all predefined metrics and documenting the efficiency of different algorithms.
+  - [x] Document our methodology, results, and insights in a detailed report that encapsulates our findings and contributions to dynamic stability in balancing systems similar to the CartPole Dynamics.
